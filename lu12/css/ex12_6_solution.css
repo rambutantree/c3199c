@@ -1,0 +1,15 @@
+
+.bigText { background-color: white;
+     border: 10px solid red;
+     font-size: 40px;
+     color: red;
+}
+  
+.smallText { background-color: white;
+     font-size: 8px;
+}
+
+.normalText {
+    font-size: 25px;
+    font-style: italic;
+}

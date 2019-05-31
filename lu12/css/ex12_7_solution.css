@@ -1,0 +1,25 @@
+@media screen and (min-width: 0px) and (max-width: 479px) {
+  /* small screen with pink background */
+ body { background-color: pink ;}   
+ p {font-size: 30px ;}
+    }
+
+@media screen and (min-width: 480px) {
+  /* medium screen. with yellow background*/
+   body { background-color: yellow ;}     
+   p {font-size: 50px ;}
+}
+
+@media screen and (min-width: 800px) {
+  /* medium-large screen. with yellow background*/
+   body { background-color: blue ;}     
+   p {font-size: 70px ;}
+}
+
+@media screen and (min-width: 1200px) {
+  /* large screen. with yellow background*/
+   body { background-color: green ;}     
+   p {font-size: 120px ;}
+}
+
+
