@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Page Title</title>
+
+<meta name="description" content="Description about the page "/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+</head>
+
+<body>
+<!-- This is a comment line -->
+<p id='p01'>  </p>
+<p id='p02'>  </p>
+
+<script>
+// for reference only
+var fruits = ['apple', 'orange' ];
+console.log('The length of the array is ' + fruits.length ) ;
+for  ( var i = 0;   i < fruits.length;   i++) {
+    console.log('index ' + i + ' contains ' + fruits[i]) ;
+}
+</script>
+    
+
+<script>
+var destinations = ['Pakistan', 'Chile', 'Tanzania', 'Hong Kong', 'Russia'];
+console.log('The length of the array is ' + destinations.length ) ;
+myTrips = "I have visited : " ;
+
+for  ( var i = 0;    i < destinations.length ;   i++) {
+    console.log('index  ' + i + ' '  + destinations[i]) ;
+    myTrips += destinations[i] + ",   "   ;
+}   
+
+document.getElementById('p01').innerHTML =  myTrips;
+    
+</script>
+
+<script>
+var destinations = ['Pakistan', 'Chile', 'Tanzania', 'Hong Kong', 'Russia'];
+console.log('The length of the array is ' + destinations.length ) ;
+myTrips = "I have visited : " ;
+
+for  ( var i = 0;    i < destinations.length - 1 ;   i++) {
+    if (i == destinations.length - 2) {
+        myTrips += destinations[i]    ;
+    }
+    else {
+        myTrips += destinations[i] + ', '
+    }
+}   
+
+myTrips += ' and  ' +  destinations[destinations.length - 1]
+document.getElementById('p02').innerHTML =  myTrips;
+    
+</script>
+</body>
+
+</html>
+
+
+
+

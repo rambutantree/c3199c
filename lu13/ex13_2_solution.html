@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Page Title</title>
+
+<meta name="description" content="Description about the page "/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="css/mycss.css"> 
+  
+</head>
+
+<body>
+<!-- This is a comment line -->
+<p> Please check the console log for the output of the codes generated </p>
+<p id='p01'></p>
+<p id='p02'></p>
+<p id='p03'></p>
+
+<script>
+console.log("Let's work with variables");
+</script>
+    
+<script>
+var name = 'Peter' ;
+var destination = 'China';
+var dateVisit = 1987 ;
+
+document.getElementById('p01').innerHTML = "This is just a sample" ;
+    
+var sentence;
+sentence = 'Hi ' + name + ' I hoped you have enoyed your visi to '  + destination  + ' on ' + dateVisit ;
+console.log(sentence);
+document.getElementById('p02').innerHTML = sentence ;
+
+sentence = sentence.replace('Hi', 'Dear') ;
+console.log(sentence);
+
+document.getElementById('p03').innerHTML = sentence ;
+    
+</script>
+
+    
+
+
+
+</body>
+
+</html>
+
+
+
+

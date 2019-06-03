@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Page Title</title>
+
+<meta name="description" content="Description about the page "/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+<!-- This is a comment line -->
+<p id='p01'>  </p>
+<p id='p02'>  </p>
+
+<script>
+
+var animal,  year;
+year = 1975; 
+animal = 'Rabbit' ;
+console.log( year + ' is the year of ' + animal);
+document.getElementById('p01').innerHTML =  year + ' is the year of ' + animal;
+
+</script>
+    
+
+<script>
+var yearOfBirth = 1978;   // replace with your best friend’s year of birth
+var daysInYear = 365;
+var currentYear = 2018 ;
+var ageInYears, ageInDays ;
+    
+ageInYears = currentYear - yearOfBirth ;
+ageInDays = daysInYear * ageInYears  ;
+var statement = 'Your best friend is ' + ageInDays  + ' days young' ;
+    
+console.log(statement);
+document.getElementById('p01').innerHTML =  statement;
+
+
+
+hoursSleeping = 8 *  ageInDays;
+hoursAwake = 16 *  ageInDays;   
+text = "Your best friend has been awake for " + hoursAwake + "hours and has slept for a grand total of " + hoursSleeping + " hours since the day he was born."
+console.log(text );
+document.getElementById('p02').innerHTML = text;
+
+
+    
+    
+</script>
+
+
+
+</body>
+
+</html>
+
+
+
+
