@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Exercise </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      
+        <style>
+
+            input {
+                font-size: 2.4em;
+                background-color: transparent;
+                text-align: center;
+                border-width: 0;
+                width: 100%;
+                margin: 0 0 .1em 0;
+                color: #fff;
+            }
+
+            label {
+                display: block;
+                font-size: .8em;
+            }
+
+            button {
+                color: #444;
+                background-color: #B5B198;
+                border-radius: 6px; 
+                font-weight: bold;
+
+            }
+
+            .boxBlack {
+                background-color: #444;
+                color: #C4BE92;
+                text-align: center;               
+                border-radius: 12px; 
+                padding: .8em .8em 1em;
+                width: 8em;
+                margin: 0 auto;	
+                box-shadow: 0px 0px 12px 0px #000;
+
+            }
+			
+			.boxGreen{
+                background-color: green;
+                color: #C4BE92;
+                text-align: center;               
+                border-radius: 12px; 
+                padding: .8em .8em 1em;
+                width: 8em;
+                margin: 0 auto;	
+                box-shadow: 0px 0px 12px 0px #000;
+
+            }
+			
+			.boxRed {
+                background-color: red;
+                color: #C4BE92;
+                text-align: center;               
+                border-radius: 12px; 
+                padding: .8em .8em 1em;
+                width: 8em;
+                margin: 0 auto;	
+                box-shadow: 0px 0px 12px 0px #000;
+
+            }
+        </style>
+        <script>
+            $(document).ready(function () {
+                var num = 0;
+                $("#down").click(function () {
+                    console.log('subracting');
+				    num = $("#qty").val(); // to pick up the value in a INPUT type element
+                    num--;
+					if (num < 0) {
+					$('#formInput').removeClass();
+                    $('#formInput').addClass('boxRed');
+                    
+                    if (num == 0 ) {
+                        
+                    $('#formInput').removeClass();
+                    $('#formInput').addClass('boxBlack')
+                    }
+					}
+					
+                    $("#qty").val(num); // to replace the value in a INPUT type element
+                });
+                
+                $("#up").click(function () {
+				    num = $("#qty").val(); // to pick up the value in a INPUT type element
+                    num = parseInt(num) + 1 ;
+                    console.log('adding' + num);
+					if (num > 0) {
+					$('#formInput').removeClass();
+                    $('#formInput').addClass('boxGreen');    
+					}
+                    $("#qty").val(num);
+
+                }); 
+
+                $("#multiple").click(function () {
+                    console.log('multiple');
+				     num = $("#qty").val();
+                    num = num * 2 ;
+                    $("#qty").val(num);
+                }); 				
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id='formInput' class="boxBlack">    
+            <label for="qty"><abbr title="Quantity">Qty</abbr></label>
+            <input  type=number id="qty" value=0 />
+            <button id="down" >-1</button>
+            <button id="up" >+1</button>
+			<button id="multiple" >x2</button>
+        </div>
+    </body>
+</html>
