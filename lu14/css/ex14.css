@@ -1,0 +1,33 @@
+.sizeL {
+    background-color: lightgrey;
+    width: 500px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: 25px;
+}
+
+
+.sizeM {
+    background-color: lightgrey;
+    width: 450px;
+    border: 15px solid blue;
+    padding: 25px;
+    margin: 25px;
+}
+
+.sizeS {
+    background-color: lightgrey;
+    width: 100px;
+    border: 10px solid red;
+    padding: 25px;
+    margin: 25px;
+}
+
+.flatBox {
+    background-color: lightgrey;
+    width: 500px;
+	height:200 px;
+    border: 10px solid black;
+    padding: 25px;
+    margin: 25px;
+}
