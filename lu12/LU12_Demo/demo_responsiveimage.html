@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Page Title</title>
+
+<meta name="description" content="Description about the page "/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+ 
+img {max-width: 100%; height: auto;}
+</style>
+</head>
+
+<body>
+<!-- This is a comment line -->
+
+<p> Problem 1 : Large images ovefill the page</p>
+<img src=media/myimage_large.jpg >
+
+    
+<p> Problem 2: Lost of focus when the image shrinks</p>
+
+<picture>
+<source media="(min-width:700px)" srcset="media/myimage_medium.jpg">
+<source media="(max-width:699px)" srcset="media/myimage_xsmall.jpg">
+   
+<img src="media/myimage_large.jpg"  style="width:100%" >
+</picture>
+</body>
+
+</html>
+
+
+<!--
+
+
+
+
+-->
+
