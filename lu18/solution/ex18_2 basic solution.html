@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <title>JSON Processing</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class='row'>
+            <h3> JSON Processing </h3>
+
+            <img id='img1' src='' style="width:100%;" />
+            <h5 id='h1'></h5>
+            <p id='p1'></p>
+
+        </div>
+    </div>
+
+
+    <script>
+        // Credit : JSON adapted from https://theysaidso.com
+        arrayofQuotesJSON = [{
+                "quote": "The real winners in life are the people who look at every situation with an expectation that they can make it work or make it better",
+                "length": "132",
+                "author": "Barbara Pletcher",
+                "background": "https://theysaidso.com/img/bgs/man_on_the_mountain.jpg",
+            },
+            {
+                "quote": "An executive is a person who always decides; sometimes he decides correctly, but he always decides.",
+                "length": "99",
+                "author": "John H. Patterson",
+                "title": "Management Quote of the day",
+                "background": "https://theysaidso.com/img/bgs/hang_on_building_top.jpg",
+            }
+        ];
+
+        var quote = arrayofQuotesJSON[1].quote;
+        var author = arrayofQuotesJSON[1].author;
+        var imageSrc = arrayofQuotesJSON[1].background;
+        $('#h1').html(quote);
+        $('#p1').html(author);
+        $('#img1').attr('src', imageSrc);
+
+    </script>
+</body>
+
+</html>

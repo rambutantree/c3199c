@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>JSON Processing</title>
+    <style>
+        img {width:100%; height: auto}
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class='row'>
+            <h3> JSON Processing </h3>
+            <p id='p1'></p>
+            <p id='p2'></p>
+            <img id='img1' src='' />
+        </div>
+    </div>
+
+
+    <script>
+        // Credit : JSON adapted from https://theysaidso.com
+        singleQuoteJSON = {
+            "quote": "The real winners in life are the people who look at every situation with an expectation that they can make it work or make it better",
+            "length": "132",
+            "author": "Barbara Pletcher",
+            "background": "https://theysaidso.com/img/bgs/man_on_the_mountain.jpg",
+        };
+
+        var quote = singleQuoteJSON.quote;
+        var author = singleQuoteJSON.author;
+        var imageSrc = singleQuoteJSON.background;
+        $('#p1').html(quote);
+        $('#p2').html(author);
+        $('#img1').attr('src', imageSrc);
+
+    </script>
+</body>
+
+</html>

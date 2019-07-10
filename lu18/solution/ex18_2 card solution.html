@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <title>JSON Processing</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <h3> JSON Processing </h3>
+
+        <div class='row'>
+            <div id='sample'>
+                <div class="card" style="width: 20em" ;>
+                    <img class="card-img-top" src="https://theysaidso.com/img/bgs/man_on_the_mountain.jpg">
+                    <div class="card-body">
+                        <p class='card-text text-justify'>
+                            The real winners in life are the people who look at every
+                            situation with an expectation that they can make it work
+                            or make it better.
+                        </p>
+                    </div>
+                </div><br />
+            </div>
+            <br />
+        </div>
+
+        <div class='row'>
+            <div id='idCards'>
+                <!-- This part needs to be inserted with cards using JAvascript/Jquery> -->
+
+
+            </div>
+        </div>
+    </div>
+    <script>
+        // Credit : JSON adapted from https://theysaidso.com
+        arrayofQuotesJSON = [{
+                "quote": "The real winners in life are the people who look at every situation with an expectation that they can make it work or make it better",
+                "length": "132",
+                "author": "Barbara Pletcher",
+
+                "background": "https://theysaidso.com/img/bgs/man_on_the_mountain.jpg",
+            },
+            {
+                "quote": "An executive is a person who always decides; sometimes he decides correctly, but he always decides.",
+                "length": "99",
+                "author": "John H. Patterson",
+
+                "title": "Management Quote of the day",
+                "background": "https://theysaidso.com/img/bgs/hang_on_building_top.jpg",
+            }
+        ];
+
+        var quote = arrayofQuotesJSON[1].quote;
+        var author = arrayofQuotesJSON[1].author;
+        var imageSrc = arrayofQuotesJSON[1].background;
+        // $('#h1').html(quote);
+        // $('#p1').html(author);
+        // $('#img1').attr('src', imageSrc)    ;
+
+        // Insert one card into the element with isd=placeholder
+
+
+        var htmlCards = "";
+        for (i = 0; i < arrayofQuotesJSON.length; i++) {
+            htmlCards += " <div class='card' style='width: 20em'> ";
+            htmlCards += "                                        ";
+            htmlCards += "<img class='card-img-top' src='" + arrayofQuotesJSON[i].background + "'>"
+            htmlCards += " <div class='card-body'>" + arrayofQuotesJSON[i].quote + "'";
+            htmlCards += "</div>";
+            htmlCards += "</div><br/>";
+        }
+        $('#idCards').append(htmlCards);
+    </script>
+</body></html>

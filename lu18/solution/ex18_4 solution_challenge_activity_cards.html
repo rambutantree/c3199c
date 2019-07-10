@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js" ></script>
+
+	
+    <title>AJAX REQUEST - HANDLING RESPONSE </title>
+  </head>
+  <body>
+  <div class="container-fluid">
+  
+  <h3> AJAX REQUEST - HANDLING RESPONSE </h3>
+  <div class='row'>   
+  <div class='col-12'>
+      
+      <div id='div1'> Fetching COE data....</div>
+      
+  </div>
+    </div>
+</div>
+
+ <script>
+
+$(document).ready(function(){
+// Read whole spreadsheet
+// TODO: Set the variable goToUrl to a sheetsu API
+// TODO: Set the variable parameters
+// var goToUrl = "https://sheetsu.com/apis/v1.0dq/b2c0f";
+
+var goToUrl = "https://sheetsu.com/apis/v1.0bu/0735b1a4c94a/";
+//goToUrl = "https://talaikis.com/api/quotes/";
+
+var parms = {};
+     
+
+// *****Insert the AJAX below *******************
+
+$.ajax({ url: goToUrl, 
+         method: "GET",
+         data: parms,
+         dataType: "json",
+         success: successFunc ,
+	     error: errorFunc ,
+	 statusCode: { 404: code404Func  ,
+		            400: code400Func }
+		});
+    
+     
+// ****** complete the AJAX call above here ******     
+     
+     
+     
+ function successFunc(data, textStatus, jqXHR) {
+  console.log("Msg from successFunc: " + textStatus);
+ 
+  newElement = " <div class='card-columns'> "
+  for (var i = 0 ; i < ( data.length -  1 ) ; i++) {
+/*      console.log(i);
+      newElement = "" ;
+      newElement = "<p> " + data[i].Month + " " ;
+      newElement += data[i].BiddingNr + " " ;
+      newElement += data[i].VehicleClass + " " ;
+      newElement += data[i].Premium + " </p>" ;
+      */
+ //     newElement = "" ;
+      newElement += "<div class='card' style='width:20em'>";
+      newElement += "<img class='card-img-top'  src='images/jazz.jpeg' />" ;
+      newElement += "<div class='card-body'>";
+      newElement += "<h5 class='card-title'>" + data[i].VehicleClass + "</h5>";
+      newElement += "<p class='card-text'> Price: " + data[i].Premium + "</p>";
+      newElement += "<p class='card-text'> Bid Month: " + data[i].Month+ "</p>";
+      newElement += "</div>" ; // end of cardbody
+      newElement += "</div>" ; // end of card
+//      $('#div1').append(newElement);    
+  }
+     newElement += "</div>";
+     $('#div1').append(newElement); 
+    
+//TODO: Write the textStatus reponse to the <p> with selector #showTextResponse
+
+ 
+}
+
+ function errorFunc( jqXHR, textStatus, errorThrown) {
+  console.log("Msg from errorFunc: " + textStatus);
+  //TODO: Write the textStatus reponse to the <p> with selector #showTextResponse
+
+}
+
+
+ function code404Func() {
+  console.log("Msg from code404Func: " + "Error 404! ");
+  console.log("Msg from HTTP: The requested resource could not be found. Check URL in client"); 
+}
+
+ function code400Func() {
+  console.log("Oops - HTTP Error 400! ");
+  console.log("Bad request. Server cannot process. Check request syntac, size, parms"); 
+}		
+    
+});
+     
+ </script> 
+  </body>
+</html>

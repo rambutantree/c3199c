@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <title>Sheetsu example</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <h3> AJAX REQUEST </h3>
+
+        <p id='showTextReponse'></p>
+
+    </div>
+
+    <script>
+        // Read whole spreadsheet
+        // TODO: Set the variable goToUrl to a sheetsu API
+        // TODO: Set the variable parameters
+        // var goToUrl = "https://sheetsu.com/apis/v1.0dq/b2c0f";
+
+        var goodAPIUrl = "https://sheetsu.com/apis/v1.0dq/020b2c0f";
+        var badAPIUrl = "https://sheetsu.com/apis/v1.0dq/020b2c0fERROR";
+        var moreBadAPIUrl = "https://ERROR.sheetsu.com/apis/v1.0dq/020b2c0fERROR";
+        var parms = {};
+
+
+        // *****Insert the AJAX below *******************
+
+        $.ajax({
+            url: badAPIUrl,
+            method: "GET",
+            data: parms,
+            dataType: "json",
+            success: successFunc,
+            error: errorFunc,
+            statusCode: {
+                404: code404Func,
+                400: code400Func
+            }
+        });
+
+
+        // ****** complete the AJAX call above here ******     
+
+
+
+        function successFunc(data, textStatus, jqXHR) {
+            console.log("Msg from successFunc: " + textStatus);
+
+            //TODO: Write the textStatus reponse to the <p> with selector #showTextResponse
+
+
+        }
+
+        function errorFunc(jqXHR, textStatus, errorThrown) {
+            console.log("Msg from errorFunc: " + textStatus);
+            //TODO: Write the textStatus reponse to the <p> with selector #showTextResponse
+
+        }
+
+
+        function code404Func() {
+            console.log("Msg from code404Func: " + "Error 404! ");
+            console.log("Msg from HTTP: The requested resource could not be found. Check URL in client");
+        }
+
+        function code400Func() {
+            console.log("Oops - HTTP Error 400! ");
+            console.log("Bad request. Server cannot process. Check request syntac, size, parms");
+        }
+
+    </script>
+</body>
+
+</html>
